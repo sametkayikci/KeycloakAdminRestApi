@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KeycloakAdminRestApi</name>
+    </assembly>
+    <members>
+        <member name="M:KeycloakAdminRestApi.Controllers.AttackDetectionController.RealmAttackDetectionBruteForceUsersDelete(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Clear any user login failures for all users This can release temporary disabled users
+            </summary>
+            <param name="realm">realm name (not id!)</param>
+            <param name="cancellationToken"></param>
+            <response code="2XX">Success</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.OpenIdConfigurationController.GetOpenIdConfigurationAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get representation of the openid configuration
+            </summary>
+            <param name="realm">realm name (not id!)</param>
+            <param name="cancellationToken"></param>
+            <response code="2XX">Success</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.RoleController.CreateRoleAsync(System.String,System.String,KeycloakAdminRestApi.Models.Roles.Role,System.Threading.CancellationToken)">
+            <summary>Create a new role for the realm or client.</summary>
+             <remarks>
+             Sample request:
+             
+             
+                 POST /{realm}/clients/{id}/roles
+                 {        
+                   "id": "Test Role",
+                   "name": "Test Role",
+                   "description": "Test Role",
+                   "composite": false,
+                   "clientRole": true
+                 }
+             </remarks>
+             <param name="realm">realm name (not id!)</param>
+             <param name="id">id of client (not client-id)</param>
+             <param name="role"></param>
+             <param name="cancellationToken"></param>
+             <response code="2XX">Success</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.RoleController.DeleteRoleByNameAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Delete a role by name
+            </summary>
+            <param name="realm">realm name (not id!)</param>
+            <param name="id">id of client (not client-id)</param>
+            <param name="roleName">role name (not id!)</param>
+            <param name="cancellationToken"></param>
+            <response code="2XX">Success</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.RoleController.DeleteRoleByNameAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Delete a role by name (Realms Roles(
+            </summary>
+            <remarks></remarks>
+            <param name="realm">realm name (not id!)</param>
+            <param name="roleName">roles name (not id!)</param>
+            <param name="cancellationToken"></param>
+            <response code="2XX">Success</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.RoleController.RealmRolesGet(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Threading.CancellationToken)">
+            <summary>
+            Get all roles for the realm or client
+            </summary>
+            <param name="realm">realm name (not id!)</param>
+            <param name="search"></param>
+            <param name="first">1</param>
+            <param name="max">10</param>
+            <param name="briefRepresentation"></param>
+            <param name="cancellationToken"></param>
+            <response code="2XX">Success</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.RoleController.GetRoleByIdAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Belirli bir rolün temsilini alın
+            </summary>
+            <param name="realm">realm adı (kimlik değil!)</param>
+            <param name="roleId">rol kimliği</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.RoleController.GetRolesAsync(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Threading.CancellationToken)">
+            <summary>
+            Get all roles for the realm or client
+            </summary>
+            <param name="realm">realm name (not id!)</param>
+            <param name="id">id of client (not client-id)</param>
+            <param name="search"></param>
+            <param name="first"></param>
+            <param name="max"></param>
+            <param name="briefRepresentation"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.RoleController.GetRolesAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get a role by name
+            </summary>
+            <param name="realm">realm name (not id!)</param>
+            <param name="id">id of client (not client-id)</param>
+            <param name="roleName">role’s name (not id!)</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.TokenController.GetAccesesToken(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get Access Token For Admin Client
+            </summary>
+            <returns>Access Token</returns>
+            <response code="2XX">Success</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.TokenController.GetAccesesTokenForSpesicifRealm(System.String)">
+            <summary>
+            Get Access Token For Specific Realm
+            </summary>
+            <returns>Access Token</returns>
+            <response code="2XX">Success</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.TokenController.GetRefreshToken(System.String,System.String)">
+            <summary>
+            Get Refresh Token
+            </summary>
+            <returns>Refresh Token</returns>
+            <response code="2XX">Success</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.UserController.RealmUsersIdGet(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get representation of the user
+            </summary>
+            <remarks></remarks>
+            <param name="realm">realm name (not id!)</param>
+            <param name="id">User id</param>
+            <param name="cancellationToken"></param>
+            <response code="2XX">Success</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.UserController.GetUserGroupsAsync(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Threading.CancellationToken)">
+            <summary>
+            Get representation of the user groups
+            </summary>
+            <remarks></remarks>
+            <param name="realm">realm name (not id!)</param>
+            <param name="id">User id</param>
+            <param name="search"></param>
+            <param name="first"></param>
+            <param name="max"></param>
+            <param name="briefRepresentation"></param>
+            <param name="cancellationToken"></param>
+            <response code="2XX">Success</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.UserController.GetUsersByEmailAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get representation of the user email
+            </summary>
+            <param name="realm">realm name (not id!)</param>
+            <param name="search">Email or username</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Controllers.UserController.RemoveUserSessionsAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Remove all user sessions associated with the user  Also send notification to all clients
+            that have an admin URL to invalidate the sessions for the particular user.
+            </summary>
+            <remarks></remarks>
+            <param name="realm">realm name (not id!)</param>
+            <param name="id">User id</param>
+            <param name="cancellationToken"></param>
+            <response code="2XX">Success</response>
+        </member>
+        <member name="P:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.Id">
+            <summary>
+            Gets or Sets Id
+            </summary>
+        </member>
+        <member name="P:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.Name">
+            <summary>
+            Gets or Sets Name
+            </summary>
+        </member>
+        <member name="P:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.Description">
+            <summary>
+            Gets or Sets Description
+            </summary>
+        </member>
+        <member name="P:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.ScopeParamRequired">
+            <summary>
+            Gets or Sets ScopeParamRequired
+            </summary>
+        </member>
+        <member name="P:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.Composites">
+            <summary>
+            Gets or Sets Composites
+            </summary>
+        </member>
+        <member name="P:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.Composite">
+            <summary>
+            Gets or Sets Composite
+            </summary>
+        </member>
+        <member name="P:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.ClientRole">
+            <summary>
+            Gets or Sets ClientRole
+            </summary>
+        </member>
+        <member name="P:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.ContainerId">
+            <summary>
+            Gets or Sets ContainerId
+            </summary>
+        </member>
+        <member name="P:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.Attributes">
+            <summary>
+            Gets or Sets Attributes
+            </summary>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.Equals(KeycloakAdminRestApi.Models.Roles.RoleRepresentation)">
+            <summary>
+            Returns true if RoleRepresentation instances are equal
+            </summary>
+            <param name="other">Instance of RoleRepresentation to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:KeycloakAdminRestApi.Models.Roles.RoleRepresentation.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+    </members>
+</doc>
